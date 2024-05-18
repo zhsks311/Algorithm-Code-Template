@@ -48,7 +48,7 @@ public class QuickSort {
     public void testMaximum(int[][] arrays,
                             int k,
                             int[][] answer) {
-        var result = new QuickSort().runBigger(arrays, k);
+        var result = runBigger(arrays, k);
         assertThat(result).isEqualTo(answer);
     }
 
@@ -57,17 +57,17 @@ public class QuickSort {
     public void testMinimum(int[][] arrays,
                             int k,
                             int[][] answer) {
-        var result = new QuickSort().runSmaller(arrays, k);
+        var result = runSmaller(arrays, k);
         assertThat(result).isEqualTo(answer);
     }
 
-    public int[][] runSmaller(int[][] points,
+    private int[][] runSmaller(int[][] points,
                               int k) {
         new QuickSortArrayCode().quicksort(points, 0, points.length - 1);
         return Arrays.copyOfRange(points, 0, k);
     }
 
-    public int[][] runBigger(int[][] points,
+    private int[][] runBigger(int[][] points,
                              int k) {
         int length = points.length;
         new QuickSortArrayCode().quicksort(points, 0, length - 1);
