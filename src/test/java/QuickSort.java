@@ -91,9 +91,8 @@ public class QuickSort {
                               int high) {
             // pivot 결정
             // pivot 값 계산 ( 필요 시 )
-            // low ~ high 루프 돌며 pivot과 비교.
+            // low ~ high 루프 돌며 pivot 과 비교.
             // pivot 보다 작으면 무조건 맨 왼쪽부터 채우기
-
             int[] pivot = points[high];
             int value = calculateValue(pivot);
             int left = low - 1;
@@ -112,7 +111,6 @@ public class QuickSort {
         int calculateValue(int[] pivot) {
             // 정렬하려는 값
             return pivot[0] * pivot[0] + pivot[1] * pivot[1];
-//        return pivot[0];
         }
 
         void swap(int[][] points,
